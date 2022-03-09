@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Action Classification using detectron and LSTM</title>
+    <title>Human Activity Recognisition</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,8 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .bg-1 {
-            background-color: #1abc9c;
-            /* Green */
+            background-color: #3364ad;
             color: #ffffff;
         }
         
@@ -20,17 +19,28 @@
             padding-top: 70px;
             padding-bottom: 70px;
         }
+        
+        .brand {
+            color: #3364ad;
+            background-color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 30px;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container-fluid bg-1 text-center">
-        <h3>Human Activity Recognisition</h3>
-        <h5>Using Machine Learning</h5>
+        <div class="brand">
+            <h3>Human Activity Recognisition</h3>
+            <h5>Using Machine Learning</h5>
+            <h6>Action Classification using detectron and LSTM</h6>
+        </div>
+
 
         {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-        <!-- Do something with the message -->
         <div id="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             <strong>ERROR: </strong> {{ message }}
@@ -109,7 +119,6 @@
 </body>
 
 <script>
-    // Add the following code if you want the name of the file appear on select
     $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);

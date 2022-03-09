@@ -9,12 +9,12 @@ Aims to Recognise various Human Activities through Machine Learning Algorithms a
 2. Using Detectron2 for pose estimation and the dataset is mapped to Detectron2 output format for training our LSTM model. 
 
 3. Currently the Model classifies the action into 6 categories
-- JUMPING
-- JUMPING_JACKS
-- BOXING
-- WAVING_2HANDS
-- WAVING_1HAND
-- CLAPPING_HANDS
+- "JUMPING",
+- "HIGH JUMP",
+- "PUNCHING",
+- "HANDS UP",
+- "WAVING HAND",
+- "HANDS TOGETHER"
 
 4. Using NgRok for webpage output and interaction page.
 
