@@ -52,6 +52,7 @@ def do_training_validation(argv):
     data_module = PoseDataModule(data_root=data_root, batch_size=args.batch_size)    
     checkpoint_callback = ModelCheckpoint(save_top_k=1, monitor='val_loss')
     lr_monitor = LearningRateMonitor(logging_interval='step')    
+    # most basic trainer, uses good defaults
     trainer = pl.Trainer.from_argparse_args(args,
         # fast_dev_run=True,
         max_epochs=args.epochs, 
