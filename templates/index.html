@@ -11,7 +11,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .bg-1 {
-            background-color: #2459bb;
+            background-color: #1abc9c;
+            /* Green */
             color: #ffffff;
         }
         
@@ -25,7 +26,7 @@
 <body>
 
     <div class="container-fluid bg-1 text-center">
-        <h3>Human Activity Recognition Using ML</h3>
+        <h3>Let's do human action classification</h3>
 
         {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
         <!-- Do something with the message -->
@@ -107,6 +108,7 @@
 </body>
 
 <script>
+    // Add the following code if you want the name of the file appear on select
     $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
