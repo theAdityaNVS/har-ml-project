@@ -12,13 +12,9 @@ from .lstm import ActionClassificationLSTM, PoseDataModule, WINDOW_SIZE
 
 def configuration_parser(parent_parser):
     parser = ArgumentParser(parents=[parent_parser], add_help=False)
-    # training batch size
     parser.add_argument('--batch_size', type=int, default=512)
-    # max training epochs = 400
     parser.add_argument('--epochs', type=int, default=400)
-    # training initial learning rate
     parser.add_argument('--learning_rate', type=float, default=0.0001)
-    # number of classes = number of human actions in the data set= 6
     parser.add_argument('--num_class', type=int, default=6)
     return parser
 
@@ -46,13 +42,11 @@ def do_training_validation(argv):
     # args = parser.parse_args()
     args, unknown = parser.parse_known_args()
     # print(args)
-    # init model
     hidden_dim = 50
     model = ActionClassificationLSTM(WINDOW_SIZE, hidden_dim, learning_rate=args.learning_rate)
     data_module = PoseDataModule(data_root=data_root, batch_size=args.batch_size)    
     checkpoint_callback = ModelCheckpoint(save_top_k=1, monitor='val_loss')
     lr_monitor = LearningRateMonitor(logging_interval='step')    
-    # most basic trainer, uses good defaults
     trainer = pl.Trainer.from_argparse_args(args,
         # fast_dev_run=True,
         max_epochs=args.epochs, 
